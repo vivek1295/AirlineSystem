@@ -11,38 +11,64 @@
 
 <script>
     <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/Site.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/Content/Site.css" rel="stylesheet" />
 </script>
+
+@*@using (Html.BeginForm())
+    {
+        <div class="w3-display-middle" style="width:65%">
+            <div class="">
+                <button class=""><i class=""></i>Flight</button>
+
+            </div>
+
+
+            <div id="Flight" class="">
+                <h3>Travel the world with us</h3>
+                <div class="" style="margin:0 -16px;">
+                    <div class="">
+                        <label>From</label>
+                        <input class="" type="text" name="origin" placeholder="Departing from">
+                    </div>
+                    <div class="">
+                        <label>To</label>
+                        <input class="" type="text" name="destination" placeholder="Arriving at">
+                    </div>
+                </div>
+                <p><button class="btn btn-light">Search Flight</button></p>
+            </div>
+        </div>
+    }*@
 
 @using (Html.BeginForm())
 {
-    <div class="w3-display-middle" style="width:65%">
-        <div class="">
-            <button class=""><i class=""></i>Flight</button>
-
-        </div>
-
+    <div id="Flight" class="w3-container">
         
-        <div id="Flight" class="">
-            <h3>Travel the world with us</h3>
-            <div class="" style="margin:0 -16px;">
-                <div class="">
-                    <label>From</label>
-                    <input class="" type="text" name="origin" placeholder="Departing from">
-                </div>
-                <div class="">
-                    <label>To</label>
-                    <input class="" type="text" name="destination" placeholder="Arriving at">
-                </div>
+        <div class="w3-card-4">
+            <div class="w3-container w3-green">
+                <h2>Serach Flight</h2>
             </div>
-            <p><button class="btn btn-light">Search Flight</button></p>
+
+            <form class="w3-container" style="padding:30px;">
+                <p>
+                    <h3 style="padding-left:20px">Origin</h3>
+                    <input style="padding-left:20px;" class="w3-input" type="text" name="origin" placeholder="Departing from">
+
+                </p>
+                <p>
+                    <h3 style="padding-left:20px;">Destinations</h3>
+                    <input style="padding-left:20px;" class="w3-input" type="text" name="destination" placeholder="Arriving at">
+                </p>
+                <p>
+                    <button class="btn btn-light">Search</button>
+                </p>
+            </form>
         </div>
     </div>
 }
-
 
 
 <div class="w3-container">
