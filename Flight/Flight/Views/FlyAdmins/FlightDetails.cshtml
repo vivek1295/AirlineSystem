@@ -1,0 +1,75 @@
+﻿@model Flight.Models.FlightsDetail
+
+@{
+    ViewBag.Title = "FlightDetails";
+    Layout = "~/Views/Shared/Page.cshtml";
+}
+
+<h2>FlightDetails</h2>
+
+<div>
+    <h4>FlightsDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LaunchDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LaunchDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Origin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Origin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeptTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeptTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrivalTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrivalTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfSeats)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfSeats)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fare)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FlightId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Training_20Feb_MumbaiModelStoreContainer" CdmEntityContainer="FlightsContext">
+    <EntitySetMapping Name="FlightsDetails">
+      <EntityTypeMapping TypeName="Training_20Feb_MumbaiModel.FlightsDetail">
+        <MappingFragment StoreEntitySet="FlightsDetails">
+          <ScalarProperty Name="FlightId" ColumnName="FlightId" />
+          <ScalarProperty Name="LaunchDate" ColumnName="LaunchDate" />
+          <ScalarProperty Name="Origin" ColumnName="Origin" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="DeptTime" ColumnName="DeptTime" />
+          <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+          <ScalarProperty Name="NoOfSeats" ColumnName="NoOfSeats" />
+          <ScalarProperty Name="Fare" ColumnName="Fare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FlyAdmins">
+      <EntityTypeMapping TypeName="Training_20Feb_MumbaiModel.FlyAdmin">
+        <MappingFragment StoreEntitySet="FlyAdmin">
+          <ScalarProperty Name="adminID" ColumnName="adminID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FlyRegisters">
+      <EntityTypeMapping TypeName="Training_20Feb_MumbaiModel.FlyRegister">
+        <MappingFragment StoreEntitySet="FlyRegister">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FlyReservations">
+      <EntityTypeMapping TypeName="Training_20Feb_MumbaiModel.FlyReservation">
+        <MappingFragment StoreEntitySet="FlyReservation">
+          <ScalarProperty Name="TicketNo" ColumnName="TicketNo" />
+          <ScalarProperty Name="FlightId" ColumnName="FlightId" />
+          <ScalarProperty Name="DateOfBooking" ColumnName="DateOfBooking" />
+          <ScalarProperty Name="JourneyDate" ColumnName="JourneyDate" />
+          <ScalarProperty Name="Origin" ColumnName="Origin" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="PassengerName" ColumnName="PassengerName" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NoOfTickets" ColumnName="NoOfTickets" />
+          <ScalarProperty Name="TotalFare" ColumnName="TotalFare" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FlyUsers">
+      <EntityTypeMapping TypeName="Training_20Feb_MumbaiModel.FlyUser">
+        <MappingFragment StoreEntitySet="FlyUser">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

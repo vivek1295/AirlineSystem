@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Training_20Feb_MumbaiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="FlightsDetail">
+    <Key>
+      <PropertyRef Name="FlightId" />
+    </Key>
+    <Property Name="FlightId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LaunchDate" Type="DateTime" Precision="0" />
+    <Property Name="Origin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Destination" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DeptTime" Type="DateTime" Precision="3" />
+    <Property Name="ArrivalTime" Type="DateTime" Precision="3" />
+    <Property Name="NoOfSeats" Type="Int32" />
+    <Property Name="Fare" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="FlyReservations" Relationship="Self.FK__FlyReserv__Fligh__6FD6F30B" FromRole="FlightsDetails" ToRole="FlyReservation" />
+  </EntityType>
+  <EntityType Name="FlyAdmin">
+    <Key>
+      <PropertyRef Name="adminID" />
+    </Key>
+    <Property Name="adminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FlyRegister">
+    <Key>
+      <PropertyRef Name="EmailId" />
+    </Key>
+    <Property Name="UserName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FlyReservation">
+    <Key>
+      <PropertyRef Name="TicketNo" />
+    </Key>
+    <Property Name="TicketNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FlightId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBooking" Type="DateTime" Precision="0" />
+    <Property Name="JourneyDate" Type="DateTime" Precision="0" />
+    <Property Name="Origin" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Destination" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PassengerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNo" Type="Int64" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NoOfTickets" Type="Int32" />
+    <Property Name="TotalFare" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FlightsDetail" Relationship="Self.FK__FlyReserv__Fligh__6FD6F30B" FromRole="FlyReservation" ToRole="FlightsDetails" />
+  </EntityType>
+  <EntityType Name="FlyUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__FlyReserv__Fligh__6FD6F30B">
+    <End Role="FlightsDetails" Type="Self.FlightsDetail" Multiplicity="0..1" />
+    <End Role="FlyReservation" Type="Self.FlyReservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FlightsDetails">
+        <PropertyRef Name="FlightId" />
+      </Principal>
+      <Dependent Role="FlyReservation">
+        <PropertyRef Name="FlightId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FlightsContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FlightsDetails" EntityType="Self.FlightsDetail" />
+    <EntitySet Name="FlyAdmins" EntityType="Self.FlyAdmin" />
+    <EntitySet Name="FlyRegisters" EntityType="Self.FlyRegister" />
+    <EntitySet Name="FlyReservations" EntityType="Self.FlyReservation" />
+    <EntitySet Name="FlyUsers" EntityType="Self.FlyUser" />
+    <AssociationSet Name="FK__FlyReserv__Fligh__6FD6F30B" Association="Self.FK__FlyReserv__Fligh__6FD6F30B">
+      <End Role="FlightsDetails" EntitySet="FlightsDetails" />
+      <End Role="FlyReservation" EntitySet="FlyReservations" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

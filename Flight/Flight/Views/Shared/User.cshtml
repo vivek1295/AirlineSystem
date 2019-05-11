@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>VFlight</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Raleway", Arial, Helvetica, sans-serif
+        }
+
+        .myLink {
+            display: none
+        }
+    </style>
+</head>
+<body class="w3-light-grey">
+
+    <!-- Navigation Bar -->
+    <div class="w3-bar w3-white w3-border-bottom w3-xlarge">
+        <a href="~/FlyUsers/Index" class="w3-bar-item w3-button w3-text-red w3-hover-black"><b><i class="fa fa-map-marker w3-margin-right"></i>VFlight</b></a>
+        @Html.ActionLink("Book Flights", "FlightView", "FlyUsers", new { @class = "w3-bar-item w3-button" })
+        @Html.ActionLink("Your Bookings", "YourBooking", "FlyUsers", new { @class = "w3-bar-item w3-button" })
+        <input type="button"class = "w3-bar-item w3-button w3-right" value="Logout" onclick="location.href='@Url.Action("Logout", "FlyRegisters")'" />
+    </div>
+
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+        @*<img class="w3-image" src="~/Images/adult-cactus-camera-297755.jpg" alt="London" width="1500" height="700">*@
+    </header>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <br />
+    <br />
+
+        <!-- Footer -->
+        <footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+            <p>Powered by <a href="Index" class="w3-hover-text-green">VFlight</a></p>
+        </footer>
+
+        <script>
+            // Tabs
+            function openLink(evt, linkName) {
+                var i, x, tablinks;
+                x = document.getElementsByClassName("myLink");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablink");
+                for (i = 0; i < x.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+                }
+                document.getElementById(linkName).style.display = "block";
+                evt.currentTarget.className += " w3-red";
+            }
+
+            // Click on the first tablink on load
+            document.getElementsByClassName("tablink")[0].click();
+        </script>
+
+</body>
+</html>

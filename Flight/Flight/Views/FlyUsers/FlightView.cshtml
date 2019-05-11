@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Flight.Models.FlightsDetail>
+
+@{
+    ViewBag.Title = "FlightView";
+    Layout = "~/Views/Shared/User.cshtml";
+
+}
+
+<h2>FlightView</h2>
+
+
+<script>
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</script>
+
+@using (Html.BeginForm())
+{
+    <div class="w3-display-middle" style="width:65%">
+        <div class="">
+            <button class=""><i class=""></i>Flight</button>
+
+        </div>
+
+        
+        <div id="Flight" class="">
+            <h3>Travel the world with us</h3>
+            <div class="" style="margin:0 -16px;">
+                <div class="">
+                    <label>From</label>
+                    <input class="" type="text" name="origin" placeholder="Departing from">
+                </div>
+                <div class="">
+                    <label>To</label>
+                    <input class="" type="text" name="destination" placeholder="Arriving at">
+                </div>
+            </div>
+            <p><button class="btn btn-light">Search Flight</button></p>
+        </div>
+    </div>
+}
+
+
+
+<div class="w3-container">
+    <h2>Colored Table Heading</h2>
+
+    <table class="w3-table-all w3-card-4">
+        <thead>
+            @*<tr class="w3-red">
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Points</th>
+                </tr>*@
+
+            <tr class="w3-blue-gray">
+                <th>
+                    @Html.DisplayNameFor(model => model.LaunchDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Origin)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Destination)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DeptTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ArrivalTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NoOfSeats)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fare)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LaunchDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Origin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Destination)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeptTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArrivalTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoOfSeats)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fare)
+                </td>
+                <td>
+                    @Html.ActionLink("Book", "Booking", new { id = item.FlightId })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

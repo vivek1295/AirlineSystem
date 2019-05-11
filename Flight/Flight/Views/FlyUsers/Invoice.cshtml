@@ -1,0 +1,105 @@
+﻿@model Flight.Models.FlyReservation
+
+@{
+    ViewBag.Title = "Invoice";
+    Layout = "~/Views/Shared/User.cshtml";
+}
+
+<h2>Your Invoice</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBooking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBooking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JourneyDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JourneyDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Origin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Origin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PassengerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PassengerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfTickets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfTickets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalFare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalFare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightsDetail.Origin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightsDetail.Origin)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <input type="button" value="Print" id="btnPrint" class="w3-btn w3-black" onclick="javascript:window.print()" />
+</div>

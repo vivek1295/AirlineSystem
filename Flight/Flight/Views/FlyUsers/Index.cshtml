@@ -1,0 +1,140 @@
+﻿@model IEnumerable<Flight.Models.FlyUser>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/User.cshtml";
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+        <div class="w3-twothird">
+            <h1>V-Flight</h1>
+            <h5 class="w3-padding-32 w3-justify">The airline was founded as a private company by Vivek Patel of InterGlobe Enterprises, a United States-based expatriate Indian in 2005. It took delivery of its first aircraft in July 2005 and commenced operations a month later. The airline became the largest Indian carrier in passenger market share in 2010. The company went public in November 2013</h5>
+
+            <p class="w3-text-grey w3-justify">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
+                occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </div>
+
+        <div class="w3-third w3-center">
+            @*<i class="fa fa-anchor w3-padding-64 w3-text-red"></i>*@
+            <img class="w3-padding-64 w3-margin-left" src="~/Images/Imperial_routes_April_1935.jpg" alt="Maps" width="350" height="350" style="padding-left:30px; padding-bottom:50px;" />
+        </div>
+    </div>
+</div>
+
+@*<div class="card-deck">
+    <div class="card">
+        <img class="card-img-top" src="~/Images/Mumbai.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="~/Images/Mumbai.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="~/Images/Mumbai.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+</div>*@
+
+
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+    </style>
+    
+<h2 style="text-align: center;">Most Visted Place in India</h2>
+<p style="padding-left:20px;">Hope you find fact or interesting thing about this cities</p>
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="~/Images/Mumbai1.jpg" style="width:290px; height:174px" />
+                <h5><b>Mumbai</b></h5>
+                <p style="text-align:justify">An abundance of historical and cultural sites makes Mumbai one of the country’s most fascinating destinations. In addition to Gateway of India – the city’s most iconic landmark, the state capital of Maharashtra boasts interesting museums, eye-catching architecture, as well as some amazing Buddhist and Hindu caves. The most remarkable are the Elephanta Caves – an impressive collection of temples, halls, and stone sculptures of Hindu gods, located on the Elephanta Island in Mumbai Harbor.</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="~/Images/Bangalore.jpg" style="width:290px; height:174px" />
+                <h5><b>Bangalore</b></h5>
+                <p style="text-align:justify">Cosmopolitan Bengaluru (formerly Bangalore) is one of India's most progressive and developed cities, blessed with a benevolent climate, a modern metro system, and a burgeoning drinking, dining and shopping scene. Its creature comforts are a godsend to the weary traveller who has done the hard yards, and it's a great city for mixing with locals in craft-beer joints or quirky independent cafes. Though there are no world-class sights, you'll find lovely parks and striking Victorian-era architecture.</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="~/Images/ahmedabad.jpg" style="width:290px; height:174px" />
+                <h5><b>Ahmedabad</b></h5>
+                <p style="text-align:justify">From being a historic city with stories of Mughal emperors, British and Maratha rule and India’s freedom struggle, to transforming into an urban metropolis, a textile and a world-class education hub, Ahmedabad has established itself on all fronts. This 606-year old Walled City has recently been registered as UNESCO World Heritage Site, thus becoming India’s first-ever world heritage city. Vibrant Festivities, Sabarmati Ashram, Endless Food Joints, Home To The IIM And MID and much more.</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="~/Images/hyderabad.jpg" style="width:290px; height:174px" />
+                <h5><b>Hyderabad</b></h5>
+                <p style="text-align:justify">Being a mingling spot of glorious past and gorgeous present, Hyderabad has always been home to majestic architectural delights that have never ceased to fascinate travellers. It is a city of monuments and palaces. Charminar is the landmark of the city and one of Hyderabad’s tourist attractions. It was built in 1591 by Muhammad Quli Qutb Shah to express his gratitude to the Almighty after his capital was saved from the plague that broke out as epidemic in the city.</p>
+            </div>
+        </div>
+    </div>
+

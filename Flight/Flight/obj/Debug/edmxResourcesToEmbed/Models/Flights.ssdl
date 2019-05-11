@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Training_20Feb_MumbaiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="FlightsDetails">
+    <Key>
+      <PropertyRef Name="FlightId" />
+    </Key>
+    <Property Name="FlightId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="LaunchDate" Type="date" />
+    <Property Name="Origin" Type="varchar" MaxLength="10" />
+    <Property Name="Destination" Type="varchar" MaxLength="10" />
+    <Property Name="DeptTime" Type="datetime" />
+    <Property Name="ArrivalTime" Type="datetime" />
+    <Property Name="NoOfSeats" Type="int" />
+    <Property Name="Fare" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="FlyAdmin">
+    <Key>
+      <PropertyRef Name="adminID" />
+    </Key>
+    <Property Name="adminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FlyRegister">
+    <Key>
+      <PropertyRef Name="EmailId" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="20" />
+    <Property Name="Role" Type="varchar" MaxLength="15" />
+    <Property Name="EmailId" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FlyReservation">
+    <Key>
+      <PropertyRef Name="TicketNo" />
+    </Key>
+    <Property Name="TicketNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FlightId" Type="varchar" MaxLength="10" />
+    <Property Name="DateOfBooking" Type="date" />
+    <Property Name="JourneyDate" Type="date" />
+    <Property Name="Origin" Type="varchar" MaxLength="20" />
+    <Property Name="Destination" Type="varchar" MaxLength="20" />
+    <Property Name="PassengerName" Type="varchar" MaxLength="50" />
+    <Property Name="ContactNo" Type="bigint" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoOfTickets" Type="int" />
+    <Property Name="TotalFare" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Status" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="FlyUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__FlyReserv__Fligh__6FD6F30B">
+    <End Role="FlightsDetails" Type="Self.FlightsDetails" Multiplicity="0..1" />
+    <End Role="FlyReservation" Type="Self.FlyReservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FlightsDetails">
+        <PropertyRef Name="FlightId" />
+      </Principal>
+      <Dependent Role="FlyReservation">
+        <PropertyRef Name="FlightId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Training_20Feb_MumbaiModelStoreContainer">
+    <EntitySet Name="FlightsDetails" EntityType="Self.FlightsDetails" Schema="sqluser" store:Type="Tables" />
+    <EntitySet Name="FlyAdmin" EntityType="Self.FlyAdmin" Schema="sqluser" store:Type="Tables" />
+    <EntitySet Name="FlyRegister" EntityType="Self.FlyRegister" Schema="sqluser" store:Type="Tables" />
+    <EntitySet Name="FlyReservation" EntityType="Self.FlyReservation" Schema="sqluser" store:Type="Tables" />
+    <EntitySet Name="FlyUser" EntityType="Self.FlyUser" Schema="sqluser" store:Type="Tables" />
+    <AssociationSet Name="FK__FlyReserv__Fligh__6FD6F30B" Association="Self.FK__FlyReserv__Fligh__6FD6F30B">
+      <End Role="FlightsDetails" EntitySet="FlightsDetails" />
+      <End Role="FlyReservation" EntitySet="FlyReservation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

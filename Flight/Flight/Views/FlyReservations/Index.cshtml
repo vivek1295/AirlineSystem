@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Flight.Models.FlyReservation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Page.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBooking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JourneyDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Origin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Destination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PassengerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfTickets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalFare)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightsDetail.Origin)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBooking)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JourneyDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Origin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Destination)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PassengerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfTickets)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalFare)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightsDetail.Origin)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TicketNo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TicketNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TicketNo })
+        </td>
+    </tr>
+}
+
+</table>
